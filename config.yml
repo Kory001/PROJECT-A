@@ -1,0 +1,61 @@
+version: "3.1"
+language: en
+
+pipeline:
+# 1. Tokenization
+- name: WhitespaceTokenizer
+
+# 2. Lookup table entity extractor - MUST come early!
+- name: RegexEntityExtractor
+  use_lookup_tables: true  # Enables lookup tables
+  case_sensitive: false    # Case insensitive matching
+  use_word_boundaries: true  # Prefer whole-word matches to reduce noise
+
+# 3. Feature extraction
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+
+# 4. Text featurization
+- name: CountVectorsFeaturizer
+  analyzer: "word"
+  min_ngram: 1
+  max_ngram: 2
+
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 3
+  max_ngram: 5
+
+# 5. Intent and additional entity classification
+- name: DIETClassifier
+  epochs: 150
+  entity_recognition: true
+  constrain_similarities: true
+  use_masked_language_model: true
+
+# 6. Entity processing
+- name: EntitySynonymMapper
+
+# 7. Response selection
+- name: ResponseSelector
+  epochs: 100
+
+# 8. Fallback classification for low confidence intents
+- name: FallbackClassifier
+  threshold: 0.3
+  ambiguity_threshold: 0.1
+
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+  enable_fallback_prediction: true
+- name: TEDPolicy
+  max_history: 5
+  epochs: 150
+  constrain_similarities: true
+  random_seed: 42
+
+# Handle unexpected intents more robustly
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 100

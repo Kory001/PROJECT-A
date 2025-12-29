@@ -1,0 +1,38 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: about me 
+  steps:
+  - intent: about_me
+  - action: utter_about_me
+
+- story: food ordering
+  steps:
+  - intent: order_food
+  - action: action_extract_food_entity
+
+- story: weather forecasting
+  steps: 
+  - intent: know_weather
+  - action: action_get_weather
+
+- story: carreer fair
+  steps:
+  - intent: carreer_advice
+  - action: action_carrer_advice
+
+- story: Match results
+  steps:
+  - intent: match_results
+  - action: action_match_results
+
+- story: health centers around
+  steps:
+  - intent: health_center_location
+  - action: action_health_centers_locating

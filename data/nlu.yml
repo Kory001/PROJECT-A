@@ -1,0 +1,238 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: about_me
+  examples: |
+    - Who are you
+    - What you can do
+    - I want to know about you
+    - Why you're important 
+
+- intent: order_food
+  examples: |
+    - Am thinking about [Pizza](food) today
+    - Can i get [pizza](food)
+    - I need [pizza](food)
+    - Do you offer [pizza](food) 
+
+
+- intent: know_weather
+  examples: |
+    - Whats the weather prediction of [New York](city)
+    - I want to know the weather of [Madrid](city) tomorrow
+    - Give me weather forcasting for [Washington](city)
+    - How the condition at [Miam](city) will be ?
+
+
+- intent: health_center_location
+  examples: |
+    - Where is the nearest health center
+    - I need to find a health center
+    - Can you help me locate a health center
+    - Show me the closest health centers
+    - Find a health center in [Chicago](city)
+    - Locate a health center near [New York](city)
+    - Nearest health center to [London](city)
+    - I am looking for a health center nearby [Mumbai](city)
+    - Show me the closest health center in [Berlin](city)
+    - Find health centers in [Paris](city)
+
+- intent: carreer_advice
+  examples: |
+    - I need advice on my career
+    - Can you help me with career guidance
+    - I am looking for career advice
+    - Give me some tips for my career
+
+- intent: match_results
+  examples: |
+    - What was the score between [Barcelona](team) and [Real Madrid](team)?
+    - Who won the match between [Manchester United](team) and [Liverpool](team)?
+    - Give me the result of [Chelsea](team) vs [Arsenal](team)
+    - Match result of [India](team) and [Australia](team)
+
+
+
+
+- lookup: team
+  examples: |
+    - Barcelona
+    - Real Madrid
+    - Manchester United
+    - Liverpool
+    - Chelsea
+    - Arsenal
+    - Bayern Munich
+    - Borussia Dortmund
+    - India
+    - Australia
+    - England
+    - Pakistan
+    - South Africa
+    - New Zealand
+    - PSG
+    - Juventus
+    - AC Milan
+    - Inter Milan
+    - Manchester City
+    - Tottenham Hotspur
+    - Atletico Madrid
+    - Sevilla
+    - Valencia
+    - Roma    
+    - Al Ahly
+    - Zamalek
+    - Kaizer Chiefs
+    - Orlando Pirates
+    - Mamelodi Sundowns
+    - TP Mazembe
+    - Raja Casablanca
+    - Wydad Casablanca  
+    - Young Africans
+    - Simba SC
+    - Azam FC 
+    - Al Hilal
+    - Al Nassr
+    - Al Ittihad
+    - Al Ahli Saudi
+    - Ajax 
+    - Feyenoord
+    - PSV Eindhoven
+    - FC Utrecht
+    - AZ Alkmaar
+    - Brann
+    - Molde
+    - Rosenborg
+    - Celtic  
+    - Tanzania
+    - Kenya
+    - Uganda
+    - Rwanda
+    - Zambia
+    - Ghana
+    - Senegal
+    - Egypt
+    - Nigeria
+    - Algeria
+    - Morocco
+    - Tunisia 
+    - Mali
+    - Ivory Coast
+    - Cameroon
+    - Burkina Faso
+    - Asec Mimosas
+    - Esperance de Tunis
+    - Wydad AC
+    - Al Masry
+
+
+
+- lookup: food
+  examples: |
+    - Pizza
+    - Burger
+    - Sushi
+    - Pasta
+    - Salad
+    - Sandwich
+    - Tacos
+    - Fried Chicken
+    - Ice Cream
+    - Steak
+    - Ramen 
+    - Ugali
+    - Sukuma Wiki
+    - Chapati
+    - Nyama Choma
+    - Mandazi
+    - Samosa
+    - Pilau
+    - Biriyani
+    - Wali
+
+    
+- lookup: city
+  examples: |
+    - New York
+    - Los Angeles
+    - Chicago
+    - Houston
+    - Phoenix
+    - Philadelphia
+    - San Antonio
+    - San Diego
+    - Dallas
+    - San Jose
+    - London
+    - Paris
+    - Berlin
+    - Madrid
+    - Rome
+    - Tokyo
+    - Beijing
+    - Mumbai
+    - Sydney
+    - Pretoria
+    - Cape Town
+    - Nairobi
+    - Kigali
+    - Lusaka
+    - Accra
+    - Dakar
+    - Cairo
+    - Alexandria
+    - Istanbul
+    - Moscow
+    - Dubai
+    - Riyadh  
+    - Dar es Salaam
+    - Dodoma
+    - Mwanza  
+    - Zanzibar
+    - Toronto
+    - Lagos
+    - Abuja
+    - Kano
+    - Ibadan
+    - Kaduna
+    - Benin City
+    - Port Harcourt
+    - Enugu
+    - Casablanca
+    - Marrakech
+    - Tunis
+    - Algiers
+    - Rabat
+    - Fes 
+    - Oran
+    - Constantine
+

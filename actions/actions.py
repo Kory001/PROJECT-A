@@ -34,7 +34,7 @@ class ActionGetWeather(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        api_key = "8aa24aa7e2976b560f91c17bc5dfa0d7"
+        api_key = "API Key"
         
         # Get location from NLU entities
         location = None

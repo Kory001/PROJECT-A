@@ -63,7 +63,7 @@ class ActionGetWeather(Action):
                 wind = data['wind']['speed']
                 
                 response_text = (
-                    f"🌤️ Weather in {city}, {country}:\n"
+                    f" Weather in {city}, {country}:\n"
                     f"• Condition: {weather}\n"
                     f"• Temperature: {temp}°C\n"
                     f"• Humidity: {humidity}%\n"
@@ -144,11 +144,11 @@ class ActionLocateHealthCenters(Action):
             if facilities:
                 # Sort by distance and take top 5
                 facilities.sort(key=lambda x: x['distance'])
-                response_text = f"🏥 Health centers near {location}:\n\n"
+                response_text = f" Health centers near {location}:\n\n"
                 
                 for i, fac in enumerate(facilities[:5], 1):
                     response_text += f"{i}. {fac['name']}\n"
-                    response_text += f"   📏 {fac['distance']} km away\n\n"
+                    response_text += f"    {fac['distance']} km away\n\n"
                 
                 dispatcher.utter_message(text=response_text)
             else:
